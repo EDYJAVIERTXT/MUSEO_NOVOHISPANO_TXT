@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sala 2 | La Educación Indígena</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS compartido -->
+    <link rel="stylesheet" href="sala1.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================== -->
+
+    <header class="top-nav">
+
+        <div class="logo-container">
+            <img src="ICSHU.png" alt="Logo del ICSHU">
+        </div>
+
+        <nav>
+            <a href="INICIOMUSEO.html">Inicio</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Salas ▾</button>
+
+                <div class="dropdown-content">
+                    <a href="sala1.html">Sala 1 · Conquista espiritual</a>
+                    <a href="sala2.html">Sala 2 · Educación indígena</a>
+                    <a href="sala3.html">Sala 3 · Educación para mestizos</a>
+                    <a href="sala4.html">Sala 4 · Colegios jesuitas</a>
+                    <a href="sala5.html">Sala 5 · Legislación educativa</a>
+                    <a href="sala6.html">Sala 6 · Reformas Borbónicas</a>
+                    <a href="sala7.html">Sala 7 · Expulsión de los jesuitas</a>
+                    <a href="sala8.html">Sala 8 · Instituciones científicas</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         ENCABEZADO DE LA SALA
+    ========================== -->
+
+    <section class="room-header">
+
+        <a href="INICIOMUSEO.html" class="back-button">
+            ← Volver al museo
+        </a>
+
+        <div class="room-number">
+            SALA 2
+        </div>
+
+        <h1>
+            La Educación Indígena
+        </h1>
+
+        <p>
+            Saberes, tradiciones y formación en los pueblos originarios
+        </p>
+
+        <div class="gold-line"></div>
+
+        <!-- Música de fondo -->
+
+        <audio controls class="background-music">
+            <source src="Música de Fondo Epica Para Videos - Música de Aventura(MP3_160K).mp3"
+                    type="audio/mpeg">
+            Tu navegador no puede reproducir este audio.
+        </audio>
+
+    </section>
+
+
+    <!-- =========================
+         TARJETA INTERACTIVA
+    ========================== -->
+
+    <main class="interactive-room">
+
+        <div class="interactive-card" id="interactiveCard">
+
+            <!-- FRENTE DE LA TARJETA -->
+
+            <section class="room-front">
+
+                <div class="main-image">
+
+                    <img
+                        src="https://www.imer.mx/tropicalisima/wp-content/uploads/sites/19/EscuelasMexicas.jpg"
+                        alt="Representación de la vida y formación de los jóvenes 
+							 Funetee: me-encanta-escribir.blogspot.com">
+
+                    <div class="image-caption">
+                        <span>
+                            La educación en los pueblos originarios
+                            <p>El Calmécac y el Telpochcalli  </p>
+							<p>FUENTE: www.imer.mx</p>
+                        </span>
+                    </div>
+
+                    <!-- CAPA INTERACTIVA -->
+
+                    <div class="image-overlay">
+
+                        <div class="overlay-content">
+
+                            <div class="floating-icon">
+                                ✦
+                            </div>
+
+                            <h2>
+                                Explorar la sala
+                            </h2>
+
+                            <p>
+                                Descubre cómo aprendían las niñas y los niños de los pueblos originarios.
+                            </p>
+
+                            <button type="button"
+                                    id="exploreButton"
+                                    class="explore-button">
+
+                                Descubrir <span>→</span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PARTE POSTERIOR DE LA TARJETA -->
+
+            <section class="room-back">
+
+                <div class="context-box">
+
+                    <span class="section-label">
+                        CONTEXTO HISTÓRICO
+                    </span>
+
+                    <h2>
+                        La educación en los pueblos originarios
+                    </h2>
+
+                    <div class="context-line"></div>
+
+                    <p>
+                        Antes de la llegada de los españoles, los pueblos originarios de Mesoamérica contaban con sistemas propios de educación. Los conocimientos, valores, tradiciones y normas de convivencia se transmitían mediante la familia, la comunidad, la observación y la participación en las actividades cotidianas.
+                    </p>
+
+                    <p>
+                        Entre los mexicas existieron instituciones educativas como el calmécac, relacionado con la formación de determinados grupos dirigentes y religiosos, y el telpochcalli, asociado con la preparación para la vida comunitaria y militar. La formación dependía de la organización social y de las responsabilidades que correspondían a cada persona.
+                    </p>
+
+                    <p>
+                        La educación también incluía el aprendizaje de oficios, la agricultura, la historia, los relatos tradicionales, las ceremonias y los conocimientos necesarios para participar en la vida de la comunidad.
+                    </p>
+
+                    <p>
+                        Con la conquista española, estas formas de enseñanza experimentaron transformaciones debido a la evangelización y al establecimiento del orden colonial. Sin embargo, numerosos saberes y tradiciones indígenas continuaron transmitiéndose de generación en generación.
+                    </p>
+
+
+                    <!-- AUDIO DE NARRACIÓN -->
+
+                    <div class="audio-narration">
+
+                        <div class="audio-title">
+                            🎧 Escucha la narración
+                        </div>
+
+                        <audio controls>
+                            <source src="MUSEO SALA 2.mp3" type="audio/mpeg">
+                            Tu navegador no puede reproducir este audio.
+                        </audio>
+
+                    </div>
+
+
+                    <!-- REGRESAR A LA IMAGEN -->
+
+                    <button type="button"
+                            id="backToImage"
+                            class="back-image-button">
+
+                        ← Ver imagen
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FORMAS DE APRENDIZAJE
+    ========================== -->
+
+    <section class="religious-orders">
+
+        <div class="section-title">
+
+            <span>
+                FORMAS DE APRENDIZAJE
+            </span>
+
+            <h2>
+                ¿Cómo se transmitían los conocimientos?
+            </h2>
+
+            <p>
+                La educación estaba presente en la familia, la comunidad y las instituciones.
+            </p>
+
+        </div>
+
+
+        <div class="orders-grid">
+
+            <!-- FAMILIA -->
+
+            <article class="order-card">
+
+                <div class="order-icon">✦</div>
+
+                <h3>
+                    La familia
+                </h3>
+
+                <p>
+                    Las niñas y los niños aprendían mediante la observación, el ejemplo y la participación en las actividades familiares, como la agricultura, las labores domésticas y los oficios.
+                </p>
+
+            </article>
+
+
+            <!-- CALMÉCAC -->
+
+            <article class="order-card">
+
+                <div class="order-icon">✦</div>
+
+                <h3>
+                    El calmécac
+                </h3>
+
+                <p>
+                    Fue una institución mexica vinculada con la formación de determinados grupos dirigentes y religiosos, así como con el aprendizaje de conocimientos y responsabilidades sociales.
+                </p>
+
+            </article>
+
+
+            <!-- TELPOCHCALLI -->
+
+            <article class="order-card">
+
+                <div class="order-icon">✦</div>
+
+                <h3>
+                    El telpochcalli
+                </h3>
+
+                <p>
+                    Se relacionaba con la disciplina, la preparación para la vida comunitaria, el trabajo colectivo y la formación militar de los jóvenes mexicas.
+                </p>
+
+            </article>
+
+
+            <!-- TRADICIÓN ORAL -->
+
+            <article class="order-card">
+
+                <div class="order-icon">✦</div>
+
+                <h3>
+                    La tradición oral
+                </h3>
+
+                <p>
+                    Los relatos, cantos, consejos, ceremonias y conocimientos transmitidos oralmente ayudaban a conservar la memoria y la identidad de los pueblos.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RECURSOS EDUCATIVOS
+    ========================== -->
+
+    <section class="resources">
+
+        <div class="section-title">
+
+            <span>
+                RECURSOS
+            </span>
+
+            <h2>
+                Explora y aprende
+            </h2>
+
+        </div>
+
+
+        <div class="resources-grid">
+
+            <!-- VIDEO -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon">▶</div>
+
+                <h3>
+                    Video educativo
+                </h3>
+
+                <p>
+                    Conoce las formas de educación y transmisión de conocimientos en los pueblos originarios.
+                </p>
+
+                <button type="button"
+                        class="resource-open"
+                        data-resource="video">
+
+                    Ver video →
+
+                </button>
+
+            </article>
+
+            <!-- FUENTE HISTÓRICA -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon">📖</div>
+
+                <h3>
+                    El Códice de Mendoza
+                </h3>
+
+                <p>
+                    Conoce una fuente pictográfica que permite estudiar aspectos de la organización y la vida cotidiana de la sociedad mexica.
+                </p>
+
+                <button type="button"
+                        class="resource-open"
+                        data-resource="character">
+
+                    Conocer fuente →
+
+                </button>
+
+            </article>
+
+
+            <!-- DATO CURIOSO -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon">💡</div>
+
+                <h3>
+                    Dato curioso
+                </h3>
+
+                <p>
+                    La educación no ocurría únicamente en instituciones: gran parte de los conocimientos se aprendía participando en la vida cotidiana.
+                </p>
+
+                <span class="curious-label">
+                    ¿Lo sabías?
+                </span>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VISOR INTERACTIVO
+    ========================== -->
+
+    <section class="resource-viewer" id="resourceViewer">
+
+        <button type="button"
+                class="viewer-close"
+                id="viewerClose"
+                aria-label="Cerrar recurso">
+
+            ×
+
+        </button>
+
+
+        <!-- VIDEO -->
+
+        <div class="viewer-panel" id="viewer-video">
+
+            <span class="viewer-label">
+                VIDEO EDUCATIVO
+            </span>
+
+            <h2>
+                La educación indígena
+            </h2>
+
+            <p>
+                FUENTE: CEAP Videos Educativos
+            </p>
+
+            <video controls preload="metadata">
+
+                <source src="VIDEOSEDU/Educación Azteca _ Fácil de Aprender.mp4" type="video/mp4">
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+        </div>
+
+        <!-- FUENTE HISTÓRICA -->
+
+        <div class="viewer-panel" id="viewer-character">
+
+            <span class="viewer-label">
+                FUENTE HISTÓRICA
+            </span>
+
+            <h2>
+                El Códice de Mendoza
+            </h2>
+
+            <div class="character-viewer-content">
+
+                <div class="character-viewer-image">
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Codex_Mendoza_folio_60r.jpg"
+                        alt="Lámina del Códice de Mendoza">
+
+                </div>
+
+                <div class="character-viewer-info">
+
+                    <h3>
+                        Un testimonio de la sociedad mexica
+                    </h3>
+
+                    <p>
+                        El Códice de Mendoza es un documento pictográfico elaborado en el siglo XVI que contiene información sobre la historia, los tributos y diversos aspectos de la sociedad mexica.
+                    </p>
+
+                    <p>
+                        Sus representaciones permiten investigar las formas de organización social y algunos aspectos de la formación de niñas, niños y jóvenes. Como toda fuente histórica, debe interpretarse considerando el contexto en que fue elaborada.
+                    </p>
+
+                    <a href="https://www.codices.inah.gob.mx/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Consultar recursos sobre códices →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REFLEXIÓN
+    ========================== -->
+
+    <section class="learning-section">
+
+        <div class="section-title">
+
+            <span>
+                REFLEXIONA
+            </span>
+
+            <h2>
+                ¿Qué podemos aprender de esta sala?
+            </h2>
+
+        </div>
+
+
+        <div class="learning-grid">
+
+            <article class="learning-card">
+
+                <div class="learning-number">01</div>
+
+                <h3>
+                    Identidad cultural
+                </h3>
+
+                <p>
+                    Los pueblos originarios desarrollaron sus propias formas de enseñar y transmitir conocimientos, valores y tradiciones.
+                </p>
+
+            </article>
+
+
+            <article class="learning-card">
+
+                <div class="learning-number">02</div>
+
+                <h3>
+                    Aprendizaje comunitario
+                </h3>
+
+                <p>
+                    La participación en la familia y en la comunidad era fundamental para aprender habilidades y responsabilidades.
+                </p>
+
+            </article>
+
+
+            <article class="learning-card">
+
+                <div class="learning-number">03</div>
+
+                <h3>
+                    Permanencia de los saberes
+                </h3>
+
+                <p>
+                    A pesar de las transformaciones coloniales, diversos conocimientos y tradiciones indígenas continuaron transmitiéndose entre generaciones.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NAVEGACIÓN ENTRE SALAS
+    ========================== -->
+
+    <footer class="room-navigation">
+
+        <a href="sala1.html" class="previous-room">
+
+            ← <span>Sala 1</span>
+
+        </a>
+
+
+        <div class="room-progress">
+
+            <span class="active">02</span>
+            <span> / </span>
+            <span>08</span>
+
+        </div>
+
+
+        <a href="sala3.html" class="next-room">
+
+            <span>Sala 3</span> →
+
+        </a>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT COMPARTIDO -->
+
+    <script src="sala1.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Museo Virtual de la Educación Novohispana</title>
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="ESTILOMUSEO2.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BARRA DE NAVEGACIÓN
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon"><img src="ICSHU.png" alt="logo icshu" width="210px" style="max-height: 62px; object-fit: contain;"></div>
+
+            <div class="logo-text">
+                <span></span>
+                <small></small>	
+            </div>
+        </div>
+
+        <nav class="menu" style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 18px; white-space: nowrap;">
+
+            <a href="#inicio" class="active">Inicio</a>
+
+            <div class="dropdown">
+                <a href="#salas">Salas ▾</a>
+
+                <div class="dropdown-content">
+                    <a href="sala1.html">Conquista espiritual</a>
+                    <a href="sala2.html">Educación indígena</a>
+                    <a href="sala3.html">Educación para mestizos</a>
+                    <a href="sala4.html">Colegios jesuitas</a>
+                    <a href="sala5.html">Legislación educativa</a>
+                    <a href="sala6.html">Reformas Borbónicas</a>
+                    <a href="sala7.html">Expulsión de los jesuitas</a>
+                    <a href="sala8.html">Instituciones científicas</a>
+                </div>
+            </div>
+
+            <a href="#recorrido">Recorrido</a>
+            <a href="#linea-tiempo">Línea del tiempo</a>
+            <a href="#personajes">Personajes</a>
+            <a href="#galeria">Galería</a>
+            <a href="#fuentes">Fuentes</a>
+
+        </nav>
+
+        <button class="search-btn">⌕</button>
+
+    </header>
+
+
+    <!-- =========================
+         PORTADA / HERO
+    ========================== -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="small-title">HISTORIA DE LA EDUCACIÓN</p> <!-- MATERIA --> 
+
+            <h1>
+                MUSEO VIRTUAL DE LA
+                <br>
+                EDUCACIÓN NOVOHISPANA
+            </h1>
+
+            <div class="ornament">✦ ───── ❦ ───── ✦</div>
+
+            <p class="hero-subtitle">
+                Recorrido por la historia de la educación
+                <br>
+                en la Nueva España
+            </p>
+
+<!--- MUSICA PUERTA -->      
+<a href="#recorrido" class="main-button" id="iniciarRecorrido">
+    INICIAR RECORRIDO
+    <span>→</span>
+</a>
+
+<audio id="sonidoPuerta" preload="auto">
+    <source src="Abrir Puerta Grande de Madera - 🔊Efecto de Sonido - Sonidos Chingones FX.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const botonRecorrido = document.getElementById("iniciarRecorrido");
+    const sonidoPuerta = document.getElementById("sonidoPuerta");
+
+    botonRecorrido.addEventListener("click", function () {
+        sonidoPuerta.currentTime = 0;
+
+        sonidoPuerta.play().catch(function (error) {
+            console.log("No se pudo reproducir el sonido:", error);
+        });
+    });
+});
+</script>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIENVENIDA
+    ========================== -->
+
+    <section id="recorrido" class="welcome">
+
+        <div class="welcome-text">
+
+            <h2>Bienvenido/a</h2>
+
+            <p>
+                Te invitamos a descubrir las principales
+                transformaciones de la educación durante la época colonial,
+                desde la conquista espiritual hasta las Instituciones
+                del siglo XVIII.
+            </p>
+
+        </div>
+
+        <div class="welcome-quote">
+
+            <p>
+                “La educación fue una herramienta
+                de poder, fe y cambio en la
+                Nueva España.”
+            </p>
+
+            <div class="ornament-small">
+                ───── ❦ ─────
+            </div>
+
+        </div>
+
+        <div class="welcome-decoration">
+            <p style="font-size: 1rem;"> -INTEGRANTES-<br><br> Martínez Jesús <br>
+ Estrada Darissa<br>
+ Palafox Evelin<br>
+ Cristóbal Edy Javier<br>
+ González Luisa Nayeli<br> </p>
+            <br>
+            
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SALAS
+    ========================== -->
+
+    <section id="salas" class="rooms-section">
+
+        <div class="section-title">
+
+            <span>──────</span>
+
+            <h2>NUESTRAS SALAS</h2>
+
+            <span>──────</span>
+
+        </div>
+
+
+        <div class="rooms-grid">
+
+
+            <!-- SALA 1 -->
+
+            <article id="sala1" class="room-card">
+
+                <div class="room-image room1"></div>
+
+                <div class="room-icon">✝</div>
+
+                <div class="room-content">
+
+                    <span>01</span>
+
+                    <h3>
+                        La Conquista
+                        <br>
+                        espiritual
+                    </h3>
+
+                    <a href="sala1.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 2 -->
+
+            <article id="sala2" class="room-card">
+
+                <div class="room-image room2"></div>
+
+                <div class="room-icon">♧</div>
+
+                <div class="room-content">
+
+                    <span>02</span>
+
+                    <h3>
+                        La educación
+                        <br>
+                        indígena
+                    </h3>
+
+                    <a href="sala2.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 3 -->
+
+            <article id="sala3" class="room-card">
+
+                <div class="room-image room3"></div>
+
+                <div class="room-icon">♟</div>
+
+                <div class="room-content">
+
+                    <span>03</span>
+
+                    <h3>
+                        La educación
+                        <br>
+                        para mestizos
+                    </h3>
+
+                    <a href="sala3.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 4 -->
+
+            <article id="sala4" class="room-card">
+
+                <div class="room-image room4"></div>
+
+                <div class="room-icon">📖</div>
+
+                <div class="room-content">
+
+                    <span>04</span>
+
+                    <h3>
+                        Los colegios
+                        <br>
+                        jesuitas
+                    </h3>
+
+                    <a href="sala4.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 5 -->
+
+            <article id="sala5" class="room-card">
+
+                <div class="room-image room5"></div>
+
+                <div class="room-icon">⚖</div>
+
+                <div class="room-content">
+
+                    <span>05</span>
+
+                    <h3>
+                        Primera
+                        <br>
+                        legislación educativa
+                    </h3>
+
+                    <a href="sala5.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 6 -->
+
+            <article id="sala6" class="room-card">
+
+                <div class="room-image room6"></div>
+
+                <div class="room-icon">♕</div>
+
+                <div class="room-content">
+
+                    <span>06</span>
+
+                    <h3>
+                        Las Reformas
+                        <br>
+                        Borbónicas
+                    </h3>
+
+                    <a href="sala6.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 7 -->
+
+            <article id="sala7" class="room-card">
+
+                <div class="room-image room7"></div>
+
+                <div class="room-icon">🚪</div>
+
+                <div class="room-content">
+
+                    <span>07</span>
+
+                    <h3>
+                        La expulsión
+                        <br>
+                        de los jesuitas
+                    </h3>
+
+                    <a href="sala7.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SALA 8 -->
+
+            <article id="sala8" class="room-card">
+
+                <div class="room-image room8"></div>
+
+                <div class="room-icon">⚛</div>
+
+                <div class="room-content">
+
+                    <span>08</span>
+
+                    <h3>
+                        Las instituciones
+                        <br>
+                        científicas del siglo XVIII
+                    </h3>
+
+                    <a href="sala8.html" class="room-button">
+                        Explorar →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LÍNEA DE TIEMPO
+    ========================== -->
+
+    <section id="linea-tiempo" class="timeline-section">
+
+        <div class="section-title light">
+
+            <span>──────</span>
+
+            <h2>LÍNEA DEL TIEMPO</h2>
+
+            <span>──────</span>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">1521</div>
+
+                <div class="timeline-dot"></div>
+
+                <p>
+                    Conquista de México-Tenochtitlan
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">SIGLO XVI</div>
+
+                <div class="timeline-dot"></div>
+
+                <p>
+                    Evangelización y primeras instituciones educativas
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">1551</div>
+
+                <div class="timeline-dot"></div>
+
+                <p>
+                    Fundación de la Real y Pontificia Universidad de México
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">SIGLO XVII</div>
+
+                <div class="timeline-dot"></div>
+
+                <p>
+                    Consolidación de instituciones educativas
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">SIGLO XVIII</div>
+
+                <div class="timeline-dot"></div>
+
+                <p>
+                    Reformas Borbónicas
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">1767</div>
+
+                <div class="timeline-dot"></div>
+
+                <p>
+                    Expulsión de los jesuitas
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PERSONAJES
+    ========================== -->
+
+    <section id="personajes" class="characters">
+
+        <div class="section-title">
+
+            <span>──────</span>
+
+            <h2>PERSONAJES</h2>
+
+            <span>──────</span>
+
+        </div>
+
+
+        <div class="characters-grid">
+			
+
+            <div  class="character-card">
+
+                <div class="character-image sor-juana"></div>
+
+                <h3> <a href="https://www.biografiasyvidas.com/biografia/j/juana_ines.htm" target="_blank">Sor Juana Inés de la Cruz </a> </h3>
+
+                <p>
+                    Escritora e intelectual novohispana.
+                </p>
+
+            </div>
+
+
+            <div class="character-card">
+
+                <div class="character-image carlos"></div>
+
+                <h3> <a href="https://www.biografiasyvidas.com/biografia/c/carlos_iii.htm" target="_blank"> Carlos III</a></h3>
+
+                <p>
+                    Monarca relacionado con las Reformas Borbónicas.
+                </p>
+
+            </div>
+
+
+            <div class="character-card">
+
+                <div class="character-image clavijero"></div>
+
+                <h3><a href="https://www.biografiasyvidas.com/biografia/c/clavijero.htm" target="_blank"> Francisco Javier Clavijero</a></h3>
+
+                <p>
+                    Jesuita e intelectual novohispano.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERÍA
+    ========================== -->
+
+    <section id="galeria" class="gallery">
+
+        <div class="section-title light">
+
+            <span>──────</span>
+
+            <h2>GALERÍA HISTÓRICA</h2>
+
+            <span>──────</span>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📜</div>
+                <p>Documentos históricos</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🏫</div>
+                <p>Instituciones educativas</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-placeholder">⛪</div>
+                <p>Órdenes religiosas</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-placeholder">🔬</div>
+                <p>Ciencia novohispana</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUIZ
+    ========================== -->
+
+    <section class="quiz">
+
+        <div class="quiz-icon">
+            🎮
+        </div>
+
+        <div>
+
+            <h2>
+                PON A PRUEBA TUS CONOCIMIENTOS
+            </h2>
+
+            <p>
+                ¿Cuánto aprendiste durante tu recorrido por el museo?
+            </p>
+
+        </div>
+
+        <a target="_blank" href="https://puzzel.org/en/crossword/play?p=-P3Z4YK0idMhyrpj5d1w" class="quiz-button">
+            COMENZAR  →
+        </a>
+		<a href="JUEGOMEMORAMA.html" class="quiz-button"> MEMORAMA → </a>
+
+    </section>
+
+
+    <!-- =========================
+         FUENTES
+    ========================== -->
+
+    <section id="fuentes" class="sources">
+
+        <div class="section-title">
+
+            <span>──────</span>
+
+            <h2>FUENTES</h2>
+
+            <span>──────</span>
+
+        </div>
+
+        <p>
+            Consulta las fuentes históricas y bibliográficas utilizadas
+            para la elaboración de este museo virtual.
+        </p>
+
+        <div class="sources-box">
+
+            <div>
+                <h3>📜 Fuentes primarias</h3>
+                <p>
+                    Documentos, imágenes, textos y registros
+                    correspondientes al periodo estudiado.
+                </p>
+            </div>
+
+            <div>
+                <h3>📚 Fuentes secundarias</h3>
+                <p>
+                    Libros, artículos académicos y páginas
+                    institucionales utilizadas para la investigación.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+			<div class="footer-logo">
+				🏛️
+			</div>
+
+			<div>
+
+				<h3>
+					MUSEO VIRTUAL DE LA
+					<br>
+					EDUCACIÓN NOVOHISPANA
+				</h3>
+
+				<p>
+					Historia de la Educación · Segundo parcial
+				</p>
+
+			</div>
+        <div class="footer-links">
+
+            <a href="#inicio">Inicio</a>
+
+        </div>
+
+    </footer>
+<audio id="musicaMuseo" preload="auto">
+    <source src="MUSEO AUD.mpeg" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const musica = document.getElementById("musicaMuseo");
+
+    musica.volume = 0.20;
+
+    // Intentar reproducir al entrar al museo
+    musica.play().catch(function () {
+        // Si el navegador lo bloquea, iniciar
+        // con la primera interacción del visitante.
+        function iniciarMusica() {
+            musica.play().catch(function () {});
+
+            document.removeEventListener("click", iniciarMusica);
+            document.removeEventListener("keydown", iniciarMusica);
+            document.removeEventListener("touchstart", iniciarMusica);
+        }
+
+        document.addEventListener("click", iniciarMusica);
+        document.addEventListener("keydown", iniciarMusica);
+        document.addEventListener("touchstart", iniciarMusica);
+    });
+});
+</script>
+
+</body>
+</html>

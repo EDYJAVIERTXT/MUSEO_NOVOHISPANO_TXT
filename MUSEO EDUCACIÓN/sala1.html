@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sala 1 | La Conquista Espiritual</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- CSS de la sala -->
+
+    <link rel="stylesheet" href="sala1.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================== -->
+
+    <header class="top-nav">
+
+        <div class="logo-container">
+
+            <img src="ICSHU.png"
+                 alt="Logo del ICSHU">
+
+        </div>
+
+
+        <nav>
+
+            <a href="INICIOMUSEO.html">
+                Inicio
+            </a>
+
+
+            <div class="dropdown">
+
+                <button class="dropbtn">
+                    Salas ▾
+                </button>
+
+
+                <div class="dropdown-content">
+
+                    <a href="sala1.html">
+                        Sala 1 · Conquista espiritual
+                    </a>
+
+                    <a href="sala2.html">
+                        Sala 2 · Educación indígena
+                    </a>
+
+                    <a href="sala3.html">
+                        Sala 3 · Educación para mestizos
+                    </a>
+
+                    <a href="sala4.html">
+                        Sala 4 · Colegios jesuitas
+                    </a>
+
+                    <a href="sala5.html">
+                        Sala 5 · Legislación educativa
+                    </a>
+
+                    <a href="sala6.html">
+                        Sala 6 · Reformas Borbónicas
+                    </a>
+
+                    <a href="sala7.html">
+                        Sala 7 · Expulsión de los jesuitas
+                    </a>
+
+                    <a href="sala8.html">
+                        Sala 8 · Instituciones científicas
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         ENCABEZADO DE LA SALA
+    ========================== -->
+
+    <section class="room-header">
+
+        <a href="INICIOMUSEO.html"
+           class="back-button">
+
+            ← Volver al museo
+
+        </a>
+
+
+        <div class="room-number">
+
+            SALA 1
+
+        </div>
+
+
+        <h1>
+
+            La Conquista espiritual
+
+        </h1>
+
+
+        <p>
+
+            La educación como instrumento de evangelización
+
+        </p>
+
+
+        <div class="gold-line"></div>
+
+
+        <!-- Música de fondo -->
+
+        <audio controls
+               class="background-music">
+
+            <source
+                src="Música de Fondo Epica Para Videos - Música de Aventura(MP3_160K).mp3"
+                type="audio/mpeg">
+
+            Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+    </section>
+
+
+
+    <!-- =========================
+         TARJETA INTERACTIVA
+    ========================== -->
+
+    <main class="interactive-room">
+
+
+        <div class="interactive-card"
+             id="interactiveCard">
+
+
+            <!-- =====================
+                 FRENTE DE LA TARJETA
+            ====================== -->
+
+            <section class="room-front">
+
+
+                <div class="main-image">
+
+
+                    <img
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgh7Q6XH7agSkRnZ8oqblVVpeZ66DB1MQQaWt-0pXQYOg5k7N09oVNiklZja0yaw4R16ecuQfVCHKtsrzFc3LLSCC02eeTLqPE_qxCh2vDY-7f9_tMtnbNX5Akm4RHKHQSkOiT1oBPtKaYaEHICQ7gPiKD24siQUKUJEb2ttFXsoMV4i_Nx18UktNGNpcwh/s550/evangelizacion-conquista-mexico.jpg"
+
+                        alt="Evangelización durante la conquista de México">
+
+
+                    <div class="image-caption">
+
+                        <span>
+
+                            La evangelización en la Nueva España
+
+                            <p>
+                                Fuente: historiacultural.com
+                            </p>
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Capa interactiva -->
+
+                    <div class="image-overlay">
+
+
+                        <div class="overlay-content">
+
+
+                            <div class="floating-icon">
+
+                                ✦
+
+                            </div>
+
+
+                            <h2>
+
+                                Explorar la sala
+
+                            </h2>
+
+
+                            <p>
+
+                                Haz clic para conocer más
+
+                            </p>
+
+
+                            <button
+                                type="button"
+                                id="exploreButton"
+                                class="explore-button">
+
+                                Descubrir
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PARTE POSTERIOR
+            ====================== -->
+
+            <section class="room-back">
+
+
+                <div class="context-box">
+
+
+                    <span class="section-label">
+
+                        CONTEXTO HISTÓRICO
+
+                    </span>
+
+
+                    <h2>
+
+                        La conquista espiritual
+
+                    </h2>
+
+
+                    <div class="context-line"></div>
+
+
+
+                    <p>
+
+                        Con la llegada de los españoles a
+                        México-Tenochtitlan en 1521 comenzó un
+                        proceso de transformación religiosa,
+                        social y cultural que modificó
+                        profundamente la vida de los pueblos
+                        originarios.
+
+                    </p>
+
+
+                    <p>
+
+                        La evangelización se convirtió en uno
+                        de los principales medios utilizados
+                        para transmitir la doctrina cristiana.
+                        Las órdenes religiosas participaron
+                        activamente en la enseñanza de la
+                        religión, la lectura, la escritura y
+                        diferentes conocimientos.
+
+                    </p>
+
+
+                    <p>
+
+                        La educación estuvo estrechamente
+                        relacionada con el proceso de
+                        evangelización y con la organización
+                        de la sociedad novohispana.
+
+                    </p>
+
+
+
+                    <!-- Audio de narración -->
+
+                    <div class="audio-narration">
+
+
+                        <div class="audio-title">
+
+                            🎧 Escucha la narración
+
+                        </div>
+
+
+                        <audio controls>
+
+                            <source
+                                src="MUSEO SALA 1 .mp3"
+                                type="audio/mpeg">
+
+                            Tu navegador no puede reproducir
+                            este audio.
+
+                        </audio>
+
+
+                    </div>
+
+
+
+                    <!-- Botón para regresar -->
+
+                    <button
+                        type="button"
+                        id="backToImage"
+                        class="back-image-button">
+
+                        ← Ver imagen
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         ÓRDENES RELIGIOSAS
+    ========================== -->
+
+    <section class="religious-orders">
+
+
+        <div class="section-title">
+
+
+            <span>
+
+                PERSONAJES Y GRUPOS
+
+            </span>
+
+
+            <h2>
+
+                Las órdenes religiosas
+
+            </h2>
+
+
+            <p>
+
+                Conoce algunas de las órdenes que
+                participaron en la evangelización.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="orders-grid">
+
+
+            <!-- Franciscanos -->
+
+            <article class="order-card">
+
+
+                <div class="order-icon">
+
+                    ✦
+
+                </div>
+
+
+                <h3>
+
+                    Franciscanos
+
+                </h3>
+
+
+                <p>
+
+                    Fueron una de las primeras órdenes
+                    religiosas en llegar a Nueva España
+                    y participaron activamente en la
+                    evangelización de los pueblos
+                    indígenas.
+
+                </p>
+
+
+                <a
+                    href="https://historiauniversal.org/franciscanos/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Conocer más →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- Dominicos -->
+
+            <article class="order-card">
+
+
+                <div class="order-icon">
+
+                    ✦
+
+                </div>
+
+
+                <h3>
+
+                    Dominicos
+
+                </h3>
+
+
+                <p>
+
+                    Participaron en la evangelización
+                    y en la enseñanza religiosa,
+                    especialmente en diferentes
+                    regiones de Nueva España.
+
+                </p>
+
+
+                <a
+                    href="https://desdelafe.mx/noticias/sabias-que/dominicos-en-mexico-500-anos-de-historia-y-mision/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Conocer más →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- Agustinos -->
+
+            <article class="order-card">
+
+
+                <div class="order-icon">
+
+                    ✦
+
+                </div>
+
+
+                <h3>
+
+                    Agustinos
+
+                </h3>
+
+
+                <p>
+
+                    Los agustinos desarrollaron
+                    actividades de evangelización,
+                    educación y organización de
+                    comunidades.
+
+                </p>
+
+
+                <a
+                    href="https://histomex.org/agustinos/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Conocer más →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- Jesuitas -->
+
+            <article class="order-card">
+
+
+                <div class="order-icon">
+
+                    ✦
+
+                </div>
+
+
+                <h3>
+
+                    Jesuitas
+
+                </h3>
+
+
+                <p>
+
+                    Destacaron por su trabajo educativo
+                    y por la creación de colegios donde
+                    se impartieron diferentes
+                    conocimientos.
+
+                </p>
+
+
+                <a
+                    href="https://www.lifeder.com/jesuitas/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Conocer más →
+
+                </a>
+
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RECURSOS
+    ========================== -->
+
+    <section class="resources">
+
+
+        <div class="section-title">
+
+
+            <span>
+
+                RECURSOS
+
+            </span>
+
+
+            <h2>
+
+                Explora y aprende
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="resources-grid">
+
+
+            <!-- =====================
+                 VIDEO
+            ====================== -->
+
+            <article class="resource-card">
+
+
+                <div class="resource-icon">
+
+                    ▶
+
+                </div>
+
+
+                <h3>
+
+                    Video educativo
+
+                </h3>
+
+
+                <p>
+
+                    Conoce más sobre el proceso de
+                    evangelización y la conquista
+                    espiritual.
+
+                </p>
+
+
+                <!-- CAMBIO: ahora abre el visor -->
+
+                <button
+                    type="button"
+                    class="resource-open"
+                    data-resource="video">
+
+                    Ver video →
+
+                </button>
+
+
+            </article>
+            <article class="resource-card">
+
+
+                <div class="resource-icon">
+
+                    🗺
+
+                </div>
+
+
+
+
+            <!-- =====================
+                 MAPA
+            ====================== -->
+
+
+                <h3>
+
+                    Mapa interactivo
+
+                </h3>
+
+
+                <p>
+
+                    Explora los territorios que
+                    formaron parte de la Nueva España.
+
+                </p>
+
+
+                <!-- CAMBIO: ahora abre el visor -->
+
+                <button
+                    type="button"
+                    class="resource-open"
+                    data-resource="map">
+
+                    Explorar mapa →
+
+                </button>
+
+
+            </article>
+
+
+
+            <!-- =====================
+                 ZUMÁRRAGA
+            ====================== -->
+
+            <article class="resource-card">
+
+
+                <div class="resource-icon">
+
+                    📖
+
+                </div>
+
+
+                <h3>
+
+                    Fray Juan de Zumárraga
+
+                </h3>
+
+
+                <p>
+
+                    Conoce a uno de los personajes
+                    relacionados con la evangelización
+                    y la educación novohispana.
+
+                </p>
+
+
+                <!-- CAMBIO: ahora abre el visor -->
+
+                <button
+                    type="button"
+                    class="resource-open"
+                    data-resource="character">
+
+                    Conocer personaje →
+
+                </button>
+
+
+            </article>
+
+
+
+            <!-- Dato curioso -->
+
+            <article class="resource-card">
+
+
+                <div class="resource-icon">
+
+                    💡
+
+                </div>
+
+
+                <h3>
+
+                    Dato curioso
+
+                </h3>
+
+
+                <p>
+
+                    La evangelización también estuvo
+                    acompañada por la enseñanza de
+                    lectura y escritura.
+
+                </p>
+
+
+                <span class="curious-label">
+
+                    ¿Lo sabías?
+
+                </span>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VISOR INTERACTIVO DE RECURSOS
+         ESTA ES LA PARTE NUEVA
+    ====================================================== -->
+
+    <section
+        class="resource-viewer"
+        id="resourceViewer">
+
+
+        <!-- BOTÓN CERRAR -->
+
+        <button
+            type="button"
+            class="viewer-close"
+            id="viewerClose"
+            aria-label="Cerrar recurso">
+
+            ×
+
+        </button>
+
+
+
+        <!-- =================================================
+             VIDEO
+        ================================================== -->
+
+        <div
+            class="viewer-panel"
+            id="viewer-video">
+
+
+            <span class="viewer-label">
+
+                VIDEO EDUCATIVO
+
+            </span>
+
+
+            <h2>
+
+                La Conquista Espiritual
+
+            </h2>
+
+
+            <p>
+
+                Conoce más sobre el proceso de evangelización
+                y la conquista espiritual de Nueva España.
+
+            </p>
+
+
+            <video
+                id="museumVideo"
+                controls
+                preload="metadata">
+
+
+                <!--
+                     VIDEO MP4 EN:
+
+                    videos/conquista-espiritual.mp4
+                -->
+
+                <source
+                    src="VIDEOSEDU/Conquista Espiritual - Reviviendo la Historia crf (1080p, h264).mp4"
+                    type="video/mp4">
+
+
+                Tu navegador no puede reproducir este video.
+
+
+            </video>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MAPA
+        ================================================== -->
+
+        <div
+            class="viewer-panel"
+            id="viewer-map">
+
+
+            <span class="viewer-label">
+
+                MAPA INTERACTIVO
+
+            </span>
+
+
+            <h2>
+
+                Explora la Nueva España
+
+            </h2>
+
+
+            <p>
+
+                Explora los territorios que formaron parte
+                de la Nueva España mediante este recurso
+                interactivo.
+
+            </p>
+
+
+            <div class="map-frame">
+
+
+                <iframe
+                    src="https://es.educaplay.com/recursos-educativos/8734869-reinos_de_la_nueva_espana.html"
+                    title="Mapa interactivo de la Nueva España">
+
+                </iframe>
+
+
+            </div>
+
+
+            <!--
+                Si Educaplay no permite mostrar el juego
+                dentro de la página, aparecerá este enlace.
+            -->
+
+            <div class="map-fallback">
+
+
+                <p>
+
+                    Si el mapa no se muestra dentro del museo,
+                    puedes abrirlo directamente:
+
+                </p>
+
+
+                <a
+                    href="https://es.educaplay.com/recursos-educativos/8734869-reinos_de_la_nueva_espana.html"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Abrir mapa interactivo →
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PERSONAJE
+        ================================================== -->
+
+        <div
+            class="viewer-panel"
+            id="viewer-character">
+
+
+            <span class="viewer-label">
+
+                PERSONAJE DESTACADO
+
+            </span>
+
+
+            <h2>
+
+                Fray Juan de Zumárraga
+
+            </h2>
+
+
+            <div class="character-viewer-content">
+
+
+                <div class="character-viewer-image">
+
+
+                    <!--
+                        COLOCA LA IMAGEN EN:
+
+                        images/zumarraga.jpg
+                    -->
+
+                    <img
+                        src="https://1.bp.blogspot.com/-uO4vfEeJwmg/U0eMoHAVVJI/AAAAAAAAB6w/D9oPHDeKO6Y/s1600/Fray-Juan-de-Zum%25C3%25A1rraga-987x1024[1].jpg"
+                        alt="Fray Juan de Zumárraga">
+
+
+                </div>
+
+
+
+                <div class="character-viewer-info">
+
+
+                    <h3>
+
+                        Fray Juan de Zumárraga
+
+                    </h3>
+
+
+                    <p>
+
+                        Fray Juan de Zumárraga fue el primer
+                        obispo de México y una figura importante
+                        en el proceso de evangelización durante
+                        los primeros años de la Nueva España.
+
+                    </p>
+
+
+                    <p>
+
+                        Participó en la organización religiosa
+                        y educativa de la sociedad novohispana
+                        y promovió la enseñanza de la lectura,
+                        la escritura y la doctrina cristiana.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.biografiasyvidas.com/biografia/z/zumarraga.htm"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Leer biografía completa →
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         APRENDIZAJE
+    ========================== -->
+
+    <section class="learning-section">
+
+
+        <div class="section-title">
+
+
+            <span>
+
+                REFLEXIONA
+
+            </span>
+
+
+            <h2>
+
+                ¿Qué podemos aprender de esta sala?
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="learning-grid">
+
+
+            <article class="learning-card">
+
+
+                <div class="learning-number">
+
+                    01
+
+                </div>
+
+
+                <h3>
+
+                    Educación
+
+                </h3>
+
+
+                <p>
+
+                    La educación puede estar relacionada
+                    con los cambios sociales, culturales
+                    y religiosos de una sociedad.
+
+                </p>
+
+
+            </article>
+
+
+
+            <article class="learning-card">
+
+
+                <div class="learning-number">
+
+                    02
+
+                </div>
+
+
+                <h3>
+
+                    Religión
+
+                </h3>
+
+
+                <p>
+
+                    La religión tuvo un papel importante
+                    en la organización de la sociedad
+                    novohispana.
+
+                </p>
+
+
+            </article>
+
+
+
+            <article class="learning-card">
+
+
+                <div class="learning-number">
+
+                    03
+
+                </div>
+
+
+                <h3>
+
+                    Sociedad
+
+                </h3>
+
+
+                <p>
+
+                    La conquista espiritual produjo
+                    transformaciones profundas en la
+                    vida de los pueblos originarios.
+
+                </p>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         NAVEGACIÓN ENTRE SALAS
+    ========================== -->
+
+    <footer class="room-navigation">
+
+
+        <a
+            href="INICIOMUSEO.html"
+            class="previous-room">
+
+            ←
+
+            <span>
+
+                Volver al inicio
+
+            </span>
+
+        </a>
+
+
+
+        <div class="room-progress">
+
+
+            <span class="active">
+
+                01
+
+            </span>
+
+
+            <span>
+
+                /
+
+            </span>
+
+
+            <span>
+
+                08
+
+            </span>
+
+
+        </div>
+
+
+
+        <a
+            href="sala2.html"
+            class="next-room">
+
+
+            <span>
+
+                Sala 2
+
+            </span>
+
+
+            →
+
+        </a>
+
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="sala1.js"></script>
+
+
+</body>
+
+</html>

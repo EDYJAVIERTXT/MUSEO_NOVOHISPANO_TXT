@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Memorama | Museo Virtual de la Educación Novohispana</title>
+
+    <style>
+        /* Paleta oficial del Museo Virtual de la Educación Novohispana */
+        :root {
+            --bg: #edf5f8;
+            --ink: #183246;
+            --card: #ffffff;
+            --back: #0c3049;
+            --back2: #1f607f;
+            --gold: #c7a45b;
+            --ok: #4384a2;
+            --muted: #607b89;
+            --pale-gold: #e4cc91;
+            --light-blue: #9bc4d5;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        :root {
+            --azul-noche: #061d2d;
+            --azul-marino: #0c3049;
+            --azul-profundo: #124664;
+            --azul-medio: #1f607f;
+            --azul-claro: #9bc4d5;
+            --dorado: #c7a45b;
+            --dorado-claro: #e4cc91;
+        }
+
+        /* Tema oscuro manual opcional, conservando la identidad del museo */
+        :root[data-theme="dark"] {
+            --bg: #061d2d;
+            --ink: #edf5f8;
+            --card: #0c3049;
+            --back: #124664;
+            --back2: #1f607f;
+            --ok: #9bc4d5;
+            --muted: #9bc4d5;
+            color-scheme: dark;
+        }
+
+        /* Modelo de caja uniforme */
+        *, *::before, *::after { box-sizing: inherit; }
+        html, body { margin: 0; }
+        body { overflow-x: hidden; }
+        html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+        /* Diseño general */
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+            min-height: 100vh;
+            padding: 20px 16px 40px;
+        }
+
+        main { max-width: 760px; margin: 0 auto; }
+        .page-title { font-family: Georgia, "Times New Roman", serif; font-size: 2.4rem; margin: 0 0 4px; letter-spacing: -0.02em; color: #0c3049; }
+        
+        p.sub { margin: 0 0 18px; color: var(--muted); }
+        button { font: inherit; color: inherit; cursor: pointer; }
+
+        /* Barra de controles */
+        .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .levels { display: flex; flex-wrap: wrap; gap: 6px; }
+        .lvl, .reset { border: 2px solid var(--gold); background: transparent; color: var(--ink); border-radius: 999px; padding: 6px 14px; font-weight: 600; }
+        .lvl[aria-pressed="true"] { background: #124664; border-color: #124664; color: #ffffff; }
+        .reset { background: var(--gold); border-color: var(--gold); color: #061d2d; }
+
+        /* Estadísticas */
+        .stats { display: flex; flex-wrap: wrap; gap: 18px; font-variant-numeric: tabular-nums; margin-bottom: 16px; }
+        .stats b { font-size: 1.3rem; display: block; }
+        .stats span { font-size: 0.85rem; color: var(--muted); }
+
+        /* Tablero de tarjetas */
+        .grid { display: grid; gap: 10px; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); }
+        .card { aspect-ratio: 3 / 4; padding: 0; border: 0; background: none; perspective: 700px; min-width: 0; }
+        .inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.45s; }
+        .card.flipped .inner { transform: rotateY(180deg); }
+        .face { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+        .back { background: repeating-conic-gradient(var(--back) 0 25%, var(--back2) 0 50%) 0 0 / 22px 22px; border: 3px solid var(--gold); }\n        .back::after { content: "MUSEO\\A EQUIPO 2"; white-space: pre; text-align: center; line-height: 1.6; color: #edf5f8; font-family: Georgia, serif; font-weight: 700; letter-spacing: .08em; font-size: clamp(.55rem, 2vw, .9rem); text-shadow: 0 1px 2px #061d2d; }
+        .front { background: var(--card); transform: rotateY(180deg); border: 3px solid #1f607f; }
+        .front img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+        .card.matched .front { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 18%, var(--card)); }
+        .card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 12px; }
+
+        /* Mensaje de victoria */
+        .win { display: none; margin-top: 18px; padding: 16px; border-radius: 12px; border: 3px solid var(--ok); background: #edf5f8; text-align: center; }
+        .win.show { display: block; }
+        .win h2 { margin: 0 0 6px; font-family: Georgia, serif; }
+
+
+        /* Navegación principal del museo */
+        .top-nav {
+            width: 100vw;
+            min-height: 82px;
+            background: var(--azul-noche);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 0 45px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 20, 35, .30);
+            margin: -20px calc((760px - 100vw) / 2) 24px;
+        }
+        .logo-container { display: flex; align-items: center; flex-shrink: 0; }
+        .logo-container img { width: 210px; max-height: 62px; object-fit: contain; }
+        .top-nav nav {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 13px;
+        }
+        .top-nav nav > a {
+            color: #eaf4f8;
+            text-decoration: none;
+            transition: .3s;
+        }
+        .top-nav nav > a:hover { color: var(--pale-gold); }
+        .dropdown { position: relative; }
+        .dropbtn {
+            background: transparent;
+            border: none;
+            color: #eaf4f8;
+            cursor: pointer;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 13px;
+            padding: 30px 0;
+            transition: .3s;
+        }
+        .dropbtn:hover { color: var(--pale-gold); }
+        .dropdown-content {
+            position: absolute;
+            top: 78px;
+            right: 0;
+            width: 280px;
+            max-width: min(85vw, 320px);
+            background: var(--azul-noche);
+            display: none;
+            flex-direction: column;
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 8px 20px rgba(0, 20, 35, .35);
+            z-index: 1001;
+        }
+        .dropdown-content a {
+            color: #edf6fa;
+            text-decoration: none;
+            padding: 13px 18px;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            transition: .3s;
+        }
+        .dropdown-content a:hover {
+            background: #124664;
+            color: var(--pale-gold);
+        }
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content { display: flex; }
+        @media (max-width: 760px) {
+            .top-nav {
+                margin: -12px 0 22px;
+                width: 100vw;
+                margin-left: calc((100% - 100vw) / 2);
+                padding: 12px 16px;
+                flex-wrap: wrap;
+            }
+            .logo-container img { width: 150px; max-height: 54px; }
+            .top-nav nav { gap: 18px; }
+            .dropbtn { padding: 12px 0; }
+            .dropdown-content { top: 42px; right: 0; }
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 520px) {
+            body { padding: 12px 10px 28px; }
+            .grid { gap: 6px; }
+            .front img { padding: 2px; }
+            .page-title { font-size: 2rem; }
+        }
+
+        /* Respeta las preferencias de movimiento */
+        @media (prefers-reduced-motion: reduce) {
+            .inner { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Navegación principal del museo -->
+        <header class="top-nav">
+            <div class="logo-container">
+                <img src="ICSHU.png" alt="Logo del ICSHU">
+            </div>
+            <nav aria-label="Navegación del museo">
+                <a href="INICIOMUSEO.html">Inicio</a>
+                <div class="dropdown">
+                    <button class="dropbtn" type="button" aria-haspopup="true">Salas ▾</button>
+                    <div class="dropdown-content">
+                        <a href="sala1.html">Sala 1 · Conquista espiritual</a>
+                        <a href="sala2.html">Sala 2 · Educación indígena</a>
+                        <a href="sala3.html">Sala 3 · Educación para mestizos</a>
+                        <a href="sala4.html">Sala 4 · Colegios jesuitas</a>
+                        <a href="sala5.html">Sala 5 · Legislación educativa</a>
+                        <a href="sala6.html">Sala 6 · Reformas Borbónicas</a>
+                        <a href="sala7.html">Sala 7 · Expulsión de los jesuitas</a>
+                        <a href="sala8.html">Sala 8 · Instituciones científicas</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Encabezado del juego -->
+        <h1 class="page-title">Memorama histórico</h1>
+        <p class="sub">Encuentra todas las parejas y pon a prueba lo aprendido en nuestro museo.</p>
+
+        <!-- Controles del juego -->
+        <div class="bar">
+            <div class="levels" id="levels"></div>
+            <button class="reset" id="reset">Reiniciar</button>
+        </div>
+
+        <!-- Estadísticas de la partida -->
+        <div class="stats">
+            <div><b id="moves">0</b><span>Intentos</span></div>
+            <div><b id="time">0:00</b><span>Tiempo</span></div>
+            <div><b id="best">–</b><span>Mejor</span></div>
+        </div>
+
+        <!-- Tablero de tarjetas -->
+        <div class="grid" id="grid" aria-label="Tablero del memorama"></div>
+
+        <!-- Mensaje al terminar -->
+        <div class="win" id="win" role="status">
+            <h2>¡Ganaste!</h2>
+            <p id="winMsg"></p>
+            <button class="reset" id="again">Jugar otra vez</button>
+        </div>
+    </main>
+
+    <script>
+        /* ==================================================
+           IMÁGENES PERSONALIZABLES
+           Cada imagen genera dos tarjetas para formar una pareja.
+           Usa rutas locales o direcciones de imágenes en internet.
+           ================================================== */
+
+        const IMAGES = [
+            { name: "sala1", src: "GAMEIMAG/FRAY JUAN.jpg" },
+            { name: "sala2", src: "GAMEIMAG/colegio jesuita.jpg" },
+            { name: "sala3", src: "GAMEIMAG/JESUITAS.jpg" },
+            { name: "sala4", src: "GAMEIMAG/meztizos.jpg" },
+            { name: "sala5", src: "GAMEIMAG/rey carlos 3.jpg" },
+            { name: "sala6", src: "GAMEIMAG/rpum.jpg" },
+            { name: "sala7", src: "GAMEIMAG/telpochcalli.jpg" },
+            { name: "sal8", src: "GAMEIMAG/ciencas.jpg" }
+        ];
+
+        /* Configura los niveles indicando el número de parejas */
+        const LEVELS = [
+            { name: "Fácil", pairs: 4 },
+            { name: "Medio", pairs: 6 },
+            { name: "Difícil", pairs: 8 }
+        ];
+
+        /* Referencias a los elementos HTML */
+        const $ = id => document.getElementById(id);
+        const grid = $("grid");
+        const levelsContainer = $("levels");
+
+        /* Variables que controlan el estado de la partida */
+        let pairs = 0, first = null, lock = false, moves = 0, matched = 0, seconds = 0, timer = null, mismatchTimeout = null;
+
+        /* Convierte los segundos al formato minutos:segundos */
+        function fmt(s) { return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+
+        /* Mezcla aleatoriamente los elementos de una lista */
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        /* Calcula las columnas según la cantidad de tarjetas */
+        function getColumns(count) { return count <= 12 ? 4 : count <= 20 ? 5 : 6; }
+
+        /* Recupera el récord del nivel actual */
+        function getBest() {
+            try {
+                const saved = localStorage.getItem("memorama-best-" + pairs);
+                return saved ? JSON.parse(saved) : null;
+            } catch (error) { return null; }
+        }
+
+        /* Guarda el récord en el navegador */
+        function saveBest(result) {
+            try { localStorage.setItem("memorama-best-" + pairs, JSON.stringify(result)); } catch (error) {}
+        }
+
+        /* Muestra el mejor resultado del nivel seleccionado */
+        function showBest() {
+            const best = getBest();
+            $("best").textContent = best ? best.moves + " / " + fmt(best.time) : "–";
+        }
+
+        /* Detiene el cronómetro */
+        function stopTimer() { clearInterval(timer); timer = null; }
+
+        /* Inicia el cronómetro cuando se descubre la primera tarjeta */
+        function startTimer() {
+            if (timer !== null) return;
+            timer = setInterval(() => { seconds++; $("time").textContent = fmt(seconds); }, 1000);
+        }
+
+        /* Crea los botones de dificultad disponibles según las imágenes */
+        function createLevels() {
+            levelsContainer.innerHTML = "";
+            const available = LEVELS.filter(level => level.pairs <= IMAGES.length);
+            if (available.length === 0) {
+                grid.innerHTML = "<p>Agrega imágenes en la sección IMAGES para comenzar.</p>";
+                return;
+            }
+            available.forEach((level, index) => {
+                const button = document.createElement("button");
+                button.className = "lvl";
+                button.dataset.pairs = level.pairs;
+                button.textContent = level.name;
+                button.setAttribute("aria-pressed", "false");
+                button.addEventListener("click", () => {
+                    pairs = level.pairs;
+                    updateSelectedLevel(button);
+                    newGame();
+                });
+                levelsContainer.appendChild(button);
+                if ((level.name === "Medio" || index === 0) && !levelsContainer.querySelector('[aria-pressed="true"]')) {
+                    pairs = level.pairs;
+                    button.setAttribute("aria-pressed", "true");
+                }
+            });
+        }
+
+        /* Actualiza el botón que indica el nivel seleccionado */
+        function updateSelectedLevel(selected) {
+            document.querySelectorAll(".lvl").forEach(button => button.setAttribute("aria-pressed", String(button === selected)));
+        }
+
+        /* Crea una tarjeta con su imagen y su evento de clic */
+        function createCard(image) {
+            const button = document.createElement("button");
+            button.className = "card";
+            button.dataset.name = image.name;
+            button.setAttribute("aria-label", "Carta oculta");
+            button.setAttribute("aria-pressed", "false");
+
+            const inner = document.createElement("span");
+            inner.className = "inner";
+
+            const back = document.createElement("span");
+            back.className = "face back";
+            back.setAttribute("aria-hidden", "true");
+
+            const front = document.createElement("span");
+            front.className = "face front";
+
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.name;
+            img.draggable = false;
+            img.addEventListener("error", () => {
+                console.error("No se pudo cargar la imagen:", image.src);
+                img.alt = "Imagen no disponible";
+            });
+
+            front.appendChild(img);
+            inner.appendChild(back);
+            inner.appendChild(front);
+            button.appendChild(inner);
+            button.addEventListener("click", () => flip(button));
+            return button;
+        }
+
+        /* Reinicia las variables, mezcla las imágenes y crea el tablero */
+        function newGame() {
+            stopTimer();
+            clearTimeout(mismatchTimeout);
+            mismatchTimeout = null;
+            first = null;
+            lock = false;
+            moves = 0;
+            matched = 0;
+            seconds = 0;
+            $("moves").textContent = "0";
+            $("time").textContent = "0:00";
+            $("win").classList.remove("show");
+
+            if (pairs < 1 || pairs > IMAGES.length) {
+                grid.innerHTML = "<p>No hay suficientes imágenes para este nivel.</p>";
+                return;
+            }
+
+            const selected = shuffle([...IMAGES]).slice(0, pairs);
+            const deck = shuffle([...selected, ...selected]);
+            grid.style.setProperty("--cols", getColumns(deck.length));
+            grid.innerHTML = "";
+            deck.forEach(image => grid.appendChild(createCard(image)));
+            showBest();
+        }
+
+        /* Voltea una tarjeta y actualiza su etiqueta accesible */
+        function setFlipped(card, on) {
+            card.classList.toggle("flipped", on);
+            card.setAttribute("aria-label", on ? "Carta " + card.dataset.name : "Carta oculta");
+            card.setAttribute("aria-pressed", String(on));
+        }
+
+        /* Comprueba las tarjetas seleccionadas y determina si forman pareja */
+        function flip(card) {
+            if (lock || card.classList.contains("flipped") || card.classList.contains("matched")) return;
+            startTimer();
+            setFlipped(card, true);
+            if (first === null) {
+                first = card;
+                return;
+            }
+
+            moves++;
+            $("moves").textContent = moves;
+            const firstCard = first, secondCard = card;
+            first = null;
+
+            if (firstCard.dataset.name === secondCard.dataset.name) {
+                firstCard.classList.add("matched");
+                secondCard.classList.add("matched");
+                matched++;
+                if (matched === pairs) win();
+            } else {
+                lock = true;
+                mismatchTimeout = setTimeout(() => {
+                    setFlipped(firstCard, false);
+                    setFlipped(secondCard, false);
+                    lock = false;
+                    mismatchTimeout = null;
+                }, 800);
+            }
+        }
+
+        /* Finaliza la partida, comprueba el récord y muestra el resultado */
+        function win() {
+            stopTimer();
+            const best = getBest();
+            const record = !best || moves < best.moves || (moves === best.moves && seconds < best.time);
+            if (record) {
+                saveBest({ moves, time: seconds });
+                showBest();
+            }
+            $("winMsg").textContent = "Lo lograste en " + moves + " intentos y " + fmt(seconds) + "." + (record ? " ¡Nuevo récord!" : "");
+            $("win").classList.add("show");
+        }
+
+        /* Conecta los botones para reiniciar o volver a jugar */
+        $("reset").addEventListener("click", newGame);
+        $("again").addEventListener("click", newGame);
+
+        /* Inicia el juego si existen imágenes disponibles */
+        if (IMAGES.length === 0) {
+            grid.innerHTML = "<p>Agrega tus imágenes en la sección IMAGES para comenzar.</p>";
+        } else {
+            createLevels();
+            newGame();
+        }
+    </script>
+</body>
+</html>
+```

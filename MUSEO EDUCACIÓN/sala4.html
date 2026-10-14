@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala 4 | Colegios jesuitas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sala1.css">
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <header class="top-nav">
+        <div class="logo-container">
+            <img src="ICSHU.png" alt="Logo del ICSHU">
+        </div>
+        <nav>
+            <a href="INICIOMUSEO.html">Inicio</a>
+            <div class="dropdown">
+                <button class="dropbtn">Salas ▾</button>
+                <div class="dropdown-content">
+                    <a href="sala1.html">Sala 1 · Conquista espiritual</a>
+                    <a href="sala2.html">Sala 2 · Educación indígena</a>
+                    <a href="sala3.html">Sala 3 · Educación para mestizos</a>
+                    <a href="sala4.html">Sala 4 · Colegios jesuitas</a>
+                    <a href="sala5.html">Sala 5 · Legislación educativa</a>
+                    <a href="sala6.html">Sala 6 · Reformas Borbónicas</a>
+                    <a href="sala7.html">Sala 7 · Expulsión de los jesuitas</a>
+                    <a href="sala8.html">Sala 8 · Instituciones científicas</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ENCABEZADO -->
+    <section class="room-header">
+        <a href="INICIOMUSEO.html" class="back-button">← Volver al museo</a>
+        <div class="room-number">SALA 4</div>
+        <h1>Colegios jesuitas</h1>
+        <p>Enseñanza, humanidades y formación en la sociedad novohispana</p>
+        <div class="gold-line"></div>
+        <audio controls class="background-music">
+            <source src="Música de Fondo Epica Para Videos - Música de Aventura(MP3_160K).mp3" type="audio/mpeg">
+            Tu navegador no puede reproducir este audio.
+        </audio>
+    </section>
+
+    <!-- TARJETA INTERACTIVA -->
+    <main class="interactive-room">
+        <div class="interactive-card" id="interactiveCard">
+            <section class="room-front">
+                <div class="main-image">
+                    <img src="https://basesdedatoscolegios.com/wp-content/uploads/2021/04/colegios-jesuitas-historia.jpg" alt="Representación histórica de un colegio jesuita en la Nueva España">
+                    <div class="image-caption">
+                        <span>
+                            Los colegios jesuitas en la Nueva España
+                            <p>FUENTE:basesdedatoscolegios.com</p>
+                        </span>
+                    </div>
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <div class="floating-icon">✦</div>
+                            <h2>Explorar la sala</h2>
+                            <p>Pasa el cursor o haz clic para conocer más</p>
+                            <button type="button" id="exploreButton" class="explore-button">Descubrir <span>→</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="room-back">
+                <div class="context-box">
+                    <span class="section-label">CONTEXTO HISTÓRICO</span>
+                    <h2>La educación en los colegios jesuitas</h2>
+                    <div class="context-line"></div>
+                    <p>La Compañía de Jesús llegó a la Nueva España en 1572. Sus integrantes establecieron colegios que se convirtieron en espacios importantes para la enseñanza y la formación intelectual durante el periodo virreinal.</p>
+                    <p>Los colegios jesuitas ofrecían estudios que podían incluir gramática latina, humanidades, filosofía y teología. La enseñanza combinaba la formación religiosa con el estudio de textos clásicos y la preparación para continuar estudios superiores.</p>
+                    <p>Estas instituciones no eran idénticas entre sí: variaban en tamaño, recursos, alumnado y cursos impartidos. Algunas se relacionaron con la Real Universidad de México y contribuyeron a formar a jóvenes de sectores privilegiados de la sociedad novohispana.</p>
+                    <div class="audio-narration">
+                        <div class="audio-title">🎧 Escucha la narración</div>
+                        <audio controls>
+                            <source src="MUSEO SALA 4.mp3" type="audio/mpeg">
+                            Tu navegador no puede reproducir este audio.
+                        </audio>
+                    </div>
+                    <button type="button" id="backToImage" class="back-image-button">← Ver imagen</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- COLEGIOS Y ENSEÑANZA -->
+    <section class="religious-orders">
+        <div class="section-title">
+            <span>COLEGIOS Y ENSEÑANZA</span>
+            <h2>Centros de estudio de la Compañía de Jesús</h2>
+            <p>Conoce algunos colegios jesuitas y las materias que se estudiaban en ellos.</p>
+        </div>
+        <div class="orders-grid">
+            <article class="order-card">
+                <div class="order-icon">✦</div>
+                <h3>Colegio Máximo de San Pedro y San Pablo</h3>
+                <p>Fue uno de los principales centros educativos de los jesuitas en la Ciudad de México. Desde el siglo XVI impartió estudios avanzados y formó parte del desarrollo intelectual de la Nueva España.</p>
+                <a href="https://www.scielo.org.mx/scielo.php?lng=es&nrm=iso&pid=S1665-44202023000200204&script=sci_arttext" target="_blank" rel="noopener noreferrer">Conocer más →</a>
+            </article>
+            <article class="order-card">
+                <div class="order-icon">✦</div>
+                <h3>Colegio de San Ildefonso</h3>
+                <p>San Ildefonso fue uno de los colegios vinculados a la educación jesuita. Su historia permite observar los cambios en la enseñanza y en las instituciones novohispanas a lo largo del tiempo.</p>
+                <a href="https://www.iisue.unam.mx/publicaciones/libros/colegios-en-nueva-espana" target="_blank" rel="noopener noreferrer">Conocer más →</a>
+            </article>
+            <article class="order-card">
+                <div class="order-icon">✦</div>
+                <h3>Humanidades y latín</h3>
+                <p>El latín ocupó un lugar importante en los estudios de los colegios jesuitas. También se enseñaban gramática, retórica y filosofía, materias consideradas fundamentales para la formación académica de la época.</p>
+                <a href="https://www.scielo.org.mx/scielo.php?lng=es&nrm=iso&pid=S1665-44202023000200204&script=sci_arttext" target="_blank" rel="noopener noreferrer">Consultar artículo →</a>
+            </article>
+            <article class="order-card">
+                <div class="order-icon">✦</div>
+                <h3>Bibliotecas y vida intelectual</h3>
+                <p>Los colegios reunieron libros, docentes y estudiantes, y participaron en la circulación de ideas religiosas, filosóficas y científicas. Su actividad también estuvo ligada a los recursos económicos y a las relaciones con la sociedad local.</p>
+                <a href="https://www.tzintzun.umich.mx/TZN/es/article/view/1270" target="_blank" rel="noopener noreferrer">Leer capítulo →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section class="resources">
+        <div class="section-title">
+            <span>RECURSOS</span>
+            <h2>Explora y aprende</h2>
+        </div>
+        <div class="resources-grid">
+            <article class="resource-card">
+                <div class="resource-icon">▶</div>
+                <h3>Video educativo</h3>
+                <p>Descubre cómo funcionaban los colegios jesuitas y qué materias se impartían en ellos.</p>
+                <button type="button" class="resource-open" data-resource="video">Ver video →</button>
+            </article>
+            <article class="resource-card">
+                <div class="resource-icon">🗺</div>
+                <h3>Recurso educativo</h3>
+                <p>Consulta un estudio académico sobre los colegios jesuitas y su importancia en la educación novohispana.</p>
+                <button type="button" class="resource-open" data-resource="map">Explorar recurso →</button>
+            </article>
+            <article class="resource-card">
+                <div class="resource-icon">📖</div>
+                <h3>Colegio Máximo de San Pedro y San Pablo</h3>
+                <p>Conoce la orden religiosa que fundó y administró numerosos colegios en la Nueva España.</p>
+                <button type="button" class="resource-open" data-resource="character">Conocer institución →</button>
+            </article>
+            <article class="resource-card">
+                <div class="resource-icon">💡</div>
+                <h3>Dato curioso</h3>
+                <p>Los colegios jesuitas combinaron la formación religiosa con estudios de gramática, humanidades, filosofía y teología.</p>
+                <span class="curious-label">¿Lo sabías?</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- VISOR INTERACTIVO DE RECURSOS -->
+    <section class="resource-viewer" id="resourceViewer">
+        <button type="button" class="viewer-close" id="viewerClose" aria-label="Cerrar recurso">×</button>
+
+        <div class="viewer-panel" id="viewer-video">
+            <span class="viewer-label">VIDEO EDUCATIVO</span>
+            <h2>Colegios jesuitas</h2>
+            <p>FUENTE: </p>
+            <video id="museumVideo" controls preload="metadata">
+                <source src="VIDEOSEDU/LOS JESUITAS - Martha Marentes (720p, h264).mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+            </video>
+        </div>
+
+        <div class="viewer-panel" id="viewer-map">
+            <span class="viewer-label">RECURSO ACADÉMICO</span>
+            <h2>Investiga los colegios jesuitas</h2>
+            <p>Este artículo académico explica la historia de los colegios jesuitas novohispanos y su papel en la educación entre los siglos XVI y XVIII.</p>
+            <div class="map-frame">
+                <iframe src="https://www.iisue.unam.mx/publicaciones/libros/colegios-en-nueva-espana" title="Artículo académico sobre los colegios jesuitas"></iframe>
+            </div>
+            <div class="map-fallback">
+                <p>Si el recurso no se muestra dentro del museo, puedes abrirlo directamente:</p>
+                <a href="https://www.iisue.unam.mx/publicaciones/libros/colegios-en-nueva-espana" target="_blank" rel="noopener noreferrer">Leer artículo académico →</a>
+            </div>
+        </div>
+
+        <div class="viewer-panel" id="viewer-character">
+            <span class="viewer-label">ORDEN RELIGIOSA DESTACADA</span>
+            <h2>Colegio Máximo de San Pedro y San Pablo</h2>
+            <div class="character-viewer-content">
+                <div class="character-viewer-image">
+                    <img src="https://images.findagrave.com/photos1024/photos/2021/123/CEM2729641_e9b44fc4-3d2a-4874-97fe-fe214b0568e9.jpeg" alt="Imagen ilustrativa de la Compañía de Jesús">
+                </div>
+                <div class="character-viewer-info">
+                    <h3>La Compañía de Jesús y su labor educativa</h3>
+                    <p>El Colegio Máximo de San Pedro y San Pablo fue uno de los centros educativos más importantes de la Compañía de Jesús en la Ciudad de México. En él se impartieron estudios avanzados y se desarrolló una parte relevante de la vida intelectual novohispana.</p>
+                    <p>Los colegios tuvieron diferentes funciones y públicos; algunos preparaban a los estudiantes para estudios superiores. En 1767, la Corona española ordenó la expulsión de los jesuitas de sus dominios, lo que transformó el funcionamiento y el destino de sus colegios.</p>
+                    <a href="https://www.scielo.org.mx/scielo.php?lng=es&nrm=iso&pid=S1665-44202023000200204&script=sci_arttext" target="_blank" rel="noopener noreferrer">Leer investigación completa →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APRENDIZAJE -->
+    <section class="learning-section">
+        <div class="section-title">
+            <span>REFLEXIONA</span>
+            <h2>¿Qué podemos aprender de esta sala?</h2>
+        </div>
+        <div class="learning-grid">
+            <article class="learning-card">
+                <div class="learning-number">01</div>
+                <h3>Educación</h3>
+                <p>Los colegios jesuitas fueron instituciones importantes en la organización educativa de la Nueva España.</p>
+            </article>
+            <article class="learning-card">
+                <div class="learning-number">02</div>
+                <h3>Instituciones</h3>
+                <p>La enseñanza jesuita incluía religión, gramática, humanidades y filosofía.</p>
+            </article>
+            <article class="learning-card">
+                <div class="learning-number">03</div>
+                <h3>Sociedad</h3>
+                <p>Los colegios contribuyeron a la vida intelectual, aunque el acceso a los estudios dependía de las condiciones sociales y económicas.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE SALAS -->
+    <footer class="room-navigation">
+        <a href="sala3.html" class="previous-room">← <span>Sala 3</span></a>
+        <div class="room-progress">
+            <span>04</span>
+            <span>/</span>
+            <span>08</span>
+        </div>
+        <a href="sala5.html" class="next-room"><span>Sala 5</span> →</a>
+    </footer>
+
+    <script src="sala1.js"></script>
+</body>
+</html>

@@ -1,0 +1,1440 @@
+@charset "utf-8";
+/* CSS Document */
+/* =========================================
+   MUSEO VIRTUAL DE LA EDUCACIÓN NOVOHISPANA
+   PALETA AZUL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #eef4f8;
+    color: #172b3a;
+    font-family: "Libre Baskerville", Georgia, serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   PALETA DE COLORES
+========================================= */
+
+:root {
+
+    /* Azules principales */
+    --azul-noche: #071c2c;
+    --azul-marino: #0d2d45;
+    --azul-profundo: #123f5c;
+    --azul: #1e5878;
+    --azul-medio: #397a9d;
+    --azul-claro: #82b6cc;
+
+    /* Fondos */
+    --azul-papel: #edf5f8;
+    --azul-crema: #f6fafc;
+    --azul-suave: #dcebf2;
+
+    /* Detalles */
+    --dorado: #c6a45c;
+    --dorado-claro: #e1c987;
+
+    /* Texto */
+    --texto: #172b3a;
+    --texto-suave: #587080;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    height: 82px;
+
+    background: var(--azul-noche);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0, 20, 35, .30);
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 310px;
+}
+
+.logo-icon {
+
+    font-size: 45px;
+
+    color: var(--dorado-claro);
+
+}
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-family: "Cinzel", serif;
+}
+
+.logo-text span {
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+.logo-text small {
+
+    color: var(--dorado-claro);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    margin-top: 3px;
+}
+
+
+/* MENU */
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+}
+
+.menu > a,
+.dropdown > a {
+
+    color: #eaf4f8;
+
+    transition: .3s;
+}
+
+.menu > a:hover,
+.dropdown > a:hover {
+
+    color: var(--dorado-claro);
+}
+
+.menu .active {
+
+    background: var(--dorado-claro);
+
+    color: var(--azul-noche);
+
+    padding: 12px 19px;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   MENÚ DESPLEGABLE
+========================================= */
+
+.dropdown {
+
+    position: relative;
+
+    padding: 30px 0;
+}
+
+.dropdown-content {
+
+    position: absolute;
+
+    top: 78px;
+
+    left: -30px;
+
+    width: 245px;
+
+    background: var(--azul-noche);
+
+    display: none;
+
+    flex-direction: column;
+
+    border-top: 3px solid var(--dorado);
+
+    box-shadow: 0 8px 20px rgba(0, 20, 35, .35);
+}
+
+.dropdown-content a {
+
+    color: #edf6fa;
+
+    padding: 13px 18px;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    transition: .3s;
+}
+
+.dropdown-content a:hover {
+
+    background: var(--azul-profundo);
+
+    color: var(--dorado-claro);
+}
+
+.dropdown:hover .dropdown-content {
+
+    display: flex;
+}
+
+
+/* BUSCAR */
+
+.search-btn {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    margin-left: 20px;
+}
+
+
+/* =========================================
+   HERO / PORTADA
+========================================= */
+
+.hero {
+
+    height: 470px;
+
+    position: relative;
+
+    background-image:
+        url("https://relatosehistorias.mx/sites/default/files/styles/relato_1200x565/public/escena_de_castas.jpg?itok=a9VNWDU0");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* CAPA AZUL */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(225, 239, 247, .94),
+            rgba(219, 235, 243, .78),
+            rgba(225, 239, 247, .92)
+        );
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1050px;
+
+    padding: 30px;
+}
+
+.small-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: var(--azul);
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(35px, 5vw, 65px);
+
+    line-height: 1.1;
+
+    color: var(--azul-noche);
+
+    font-weight: 600;
+}
+
+.ornament {
+
+    color: var(--dorado);
+
+    font-size: 20px;
+
+    margin: 15px 0;
+}
+
+.hero-subtitle {
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+
+    color: #294a5d;
+
+    margin-bottom: 25px;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.main-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: var(--azul-noche);
+
+    color: white;
+
+    padding: 16px 29px;
+
+    border-radius: 30px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    transition: .3s;
+
+    box-shadow: 0 5px 15px rgba(0,30,50,.25);
+}
+
+.main-button:hover {
+
+    background: var(--azul);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   BIENVENIDA
+========================================= */
+
+.welcome {
+
+    min-height: 210px;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(100, 160, 190, .18),
+            transparent 30%
+        ),
+
+        var(--azul-crema);
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr .35fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 45px 7%;
+
+    border-bottom: 1px solid #c4d9e3;
+}
+
+.welcome h2 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 37px;
+
+    margin-bottom: 15px;
+
+    color: var(--azul-noche);
+}
+
+.welcome-text p {
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    max-width: 700px;
+
+    color: var(--texto);
+}
+
+.welcome-quote {
+
+    text-align: center;
+
+    font-family: "Libre Baskerville", serif;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: var(--azul);
+}
+
+.ornament-small {
+
+    margin-top: 12px;
+
+    color: var(--dorado);
+}
+
+.welcome-decoration {
+
+    font-size: 65px;
+
+    line-height: 1.1;
+
+    opacity: .45;
+
+    text-align: center;
+
+    filter: grayscale(.2);
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+.section-title {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+
+    color: var(--azul);
+}
+
+.section-title h2 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.section-title span {
+
+    color: var(--dorado);
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   SALAS
+========================================= */
+
+.rooms-section {
+
+    padding: 60px 5% 75px;
+
+    background: var(--azul-papel);
+}
+
+.rooms-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    max-width: 1450px;
+
+    margin: auto;
+}
+
+
+/* TARJETA */
+
+.room-card {
+
+    position: relative;
+
+    min-height: 330px;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 15px rgba(15, 55, 75, .18);
+
+    transition: .4s;
+
+    background: var(--azul-marino);
+}
+
+.room-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(10, 50, 70, .28);
+}
+
+
+/* IMAGEN */
+
+.room-image {
+
+    height: 180px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: saturate(.7) contrast(.95);
+
+    position: relative;
+}
+
+
+/* CAPA AZUL SOBRE IMAGEN */
+
+.room-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(15, 63, 88, .20);
+
+    transition: .3s;
+}
+
+.room-card:hover .room-image::after {
+
+    background: rgba(15, 63, 88, .05);
+}
+
+
+/* IMÁGENES */
+
+.room1 {
+    background-image:
+        url("https://examtimeassets.s3.amazonaws.com/uploads/media/image/16924210/desktop_8ab64f76-2ebe-4049-a821-3e9ee747ff01.jpg");
+}
+
+.room2 {
+    background-image:
+        url("https://mexicanosprimero.org/assets/dimages/comunicacion-educativa/blog/21/img_portada.webp");
+}
+
+.room3 {
+    background-image:
+        url("https://prezigram-assets.prezicdn.net/ed8706a126e4f9c33e5b899d84752e5a5abc03e1242fab30b9fed8fe39d51e615df86170062b9d28439b463b8219cbe6d07cc3a83c54ffa01b1579949b3201b1");
+}
+
+.room4 {
+    background-image:
+        url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQkn15wzY8ePQ_jxhTKHIfPlZ_qZVZXxFzXUb2A_RP4MD6R5rn13KjWI6YWe103B-eIPOMNTeizdebOJxxPEN4EyzPIbIJ9qoyibepSXXz_RmIUnCKYeRAx4mE0zqWqBMV47Z9PYuOs8k/s550/educa-jesuita.jpg");
+}
+
+.room5 {
+    background-image:
+        url("https://portalacademico.cch.unam.mx/materiales/al/cont/hist/mex/mex1/histMexU5OA05/img/HM1u5oa5p01.jpg");
+}
+
+.room6 {
+    background-image:
+        url("https://www.lifeder.com/wp-content/uploads/2019/12/reformas-borbonicas-1.jpg");
+}
+
+.room7 {
+    background-image:
+        url("https://laamericaespanyola.com/wp-content/uploads/2024/01/8b6fb-la2bexpulsion2bde2blos2b2bjesuitas.jpg");
+}
+
+.room8 {
+    background-image:
+        url("https://e1.portalacademico.cch.unam.mx/materiales/al/cont/hist/mex/mex1/histMexU3OA05/img/HM1u3oa05p04e02.jpg");
+}
+
+
+/* ICONOS */
+
+.room-icon {
+
+    position: absolute;
+
+    top: 151px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: var(--azul-marino);
+
+    border: 2px solid var(--dorado-claro);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    z-index: 2;
+}
+
+
+/* CONTENIDO */
+
+.room-content {
+
+    min-height: 150px;
+
+    padding: 35px 18px 18px;
+
+    text-align: center;
+
+    color: white;
+}
+
+.room-content > span {
+
+    font-family: "Cinzel", serif;
+
+    color: var(--dorado-claro);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.room-content h3 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    margin: 5px 0 10px;
+}
+
+.room-button {
+
+    font-size: 11px;
+
+    color: var(--dorado-claro);
+
+    opacity: 0;
+
+    transition: .3s;
+}
+
+.room-card:hover .room-button {
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   LÍNEA DEL TIEMPO
+========================================= */
+
+.timeline-section {
+
+    background: var(--azul-noche);
+
+    color: white;
+
+    padding: 65px 7% 80px;
+}
+
+.section-title.light {
+
+    color: #edf6fa;
+}
+
+.timeline {
+
+    max-width: 1200px;
+
+    margin: 65px auto 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 0;
+
+    right: 0;
+
+    height: 2px;
+
+    background: var(--dorado);
+}
+
+.timeline-item {
+
+    position: relative;
+
+    width: 16%;
+
+    text-align: center;
+}
+
+.timeline-date {
+
+    font-family: "Cinzel", serif;
+
+    color: var(--dorado-claro);
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.timeline-dot {
+
+    width: 17px;
+
+    height: 17px;
+
+    border: 3px solid var(--dorado-claro);
+
+    background: var(--azul-noche);
+
+    border-radius: 50%;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.timeline-item p {
+
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #d6e7ef;
+}
+
+
+/* =========================================
+   PERSONAJES
+========================================= */
+
+.characters {
+
+    padding: 70px 8%;
+
+    background: var(--azul-crema);
+}
+
+.characters-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+.character-card {
+
+    background: white;
+
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    box-shadow: 0 5px 18px rgba(20, 60, 80, .12);
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    border: 1px solid #d7e6ed;
+
+    transition: .3s;
+}
+
+.character-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(20,60,80,.18);
+}
+
+.character-image {
+
+    height: 240px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: saturate(.7);
+}
+
+.sor-juana {
+
+    background-image:
+        url("https://upload.wikimedia.org/wikipedia/commons/5/5a/Sor_Juana_by_Miguel_Cabrera_%28cropped%29.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original");
+}
+
+.carlos {
+
+    background-image:
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPq-lrPVrglMlJYzuBRpP_MLY8vDJPC2hKIxLLpTqCTQ&s");
+}
+
+.clavijero {
+
+    background-image:
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA5zB8MSgv9uxurs6W1L9C_pG7_pv08_ABBbWrGX-0xg&s=10");
+}
+
+.character-card h3 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 17px;
+
+    margin: 20px 15px 8px;
+
+    color: var(--azul-noche);
+}
+
+.character-card p {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    padding: 0 20px;
+
+    color: var(--texto-suave);
+}
+
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.gallery {
+
+    padding: 70px 8%;
+
+    background: var(--azul-marino);
+
+    color: white;
+}
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.gallery-item {
+
+    border: 1px solid rgba(225,201,135,.45);
+
+    padding: 12px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.gallery-item:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--dorado);
+}
+
+.gallery-placeholder {
+
+    height: 180px;
+
+    background: var(--azul-profundo);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 60px;
+}
+
+.gallery-item p {
+
+    font-family: "Cinzel", serif;
+
+    margin-top: 14px;
+
+    font-size: 13px;
+
+    color: var(--dorado-claro);
+}
+
+
+/* =========================================
+   QUIZ
+========================================= */
+
+.quiz {
+
+    background: var(--azul-medio);
+
+    padding: 30px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    color: white;
+}
+
+.quiz-icon {
+
+    font-size: 45px;
+}
+
+.quiz h2 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 21px;
+}
+
+.quiz p {
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    color: #e4f1f6;
+}
+
+.quiz-button {
+
+    background: var(--azul-noche);
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 5px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 11px;
+
+    transition: .3s;
+
+    border: 1px solid var(--dorado);
+}
+
+.quiz-button:hover {
+
+    background: var(--azul-profundo);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FUENTES
+========================================= */
+
+.sources {
+
+    padding: 70px 8%;
+
+    background: var(--azul-papel);
+
+    text-align: center;
+}
+
+.sources > p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    color: var(--texto-suave);
+}
+
+.sources-box {
+
+    max-width: 950px;
+
+    margin: 35px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.sources-box > div {
+
+    background: white;
+
+    border: 1px solid #c9dce5;
+
+    padding: 30px;
+
+    text-align: left;
+
+    border-radius: 6px;
+
+    box-shadow: 0 3px 10px rgba(20,60,80,.06);
+}
+
+.sources-box h3 {
+
+    font-family: "Cinzel", serif;
+
+    margin-bottom: 12px;
+
+    color: var(--azul);
+}
+
+.sources-box p {
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: var(--texto-suave);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    background: #041520;
+
+    color: white;
+
+    padding: 35px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-logo {
+
+    font-size: 45px;
+
+    color: var(--dorado);
+}
+
+footer h3 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+footer p {
+
+    color: #8eabb9;
+
+    font-size: 11px;
+
+    margin-top: 7px;
+}
+
+.footer-links {
+
+    margin-left: auto;
+
+    display: flex;
+
+    gap: 20px;
+
+    font-size: 11px;
+
+    color: #b8d0dc;
+}
+
+.footer-links a:hover {
+
+    color: var(--dorado-claro);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+
+        padding: 0 20px;
+    }
+
+    .menu {
+
+        gap: 14px;
+
+        font-size: 11px;
+    }
+
+    .logo {
+
+        min-width: 250px;
+    }
+
+    .rooms-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+
+        height: auto;
+
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+
+        min-width: auto;
+    }
+
+    .menu {
+
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 8px;
+    }
+
+    .search-btn {
+
+        display: none;
+    }
+
+    .hero {
+
+        height: 520px;
+    }
+
+    .welcome {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .welcome-decoration {
+
+        display: none;
+    }
+
+    .characters-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    /* TIMELINE MÓVIL */
+
+    .timeline {
+
+        flex-direction: column;
+
+        gap: 35px;
+
+        margin-left: 20px;
+    }
+
+    .timeline::before {
+
+        left: 8px;
+
+        top: 0;
+
+        bottom: 0;
+
+        width: 2px;
+
+        height: auto;
+    }
+
+    .timeline-item {
+
+        width: 100%;
+
+        text-align: left;
+
+        padding-left: 30px;
+    }
+
+    .timeline-dot {
+
+        position: absolute;
+
+        left: 0;
+
+        top: 0;
+    }
+
+    .timeline-date {
+
+        margin: 0 0 7px;
+    }
+
+    .timeline-item p {
+
+        margin: 0;
+    }
+
+
+    /* QUIZ */
+
+    .quiz {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    /* FUENTES */
+
+    .sources-box {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+		
+        text-align: center;
+    }
+	
+    .footer-links {
+
+        margin: 15px 0 0;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================
+   MÓVIL PEQUEÑO
+========================================= */
+
+@media (max-width: 550px) {
+
+    .rooms-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+
+        font-size: 14px;
+    }
+
+    .section-title h2 {
+
+        font-size: 21px;
+    }
+
+    .section-title span {
+
+        display: none;
+    }
+
+}
